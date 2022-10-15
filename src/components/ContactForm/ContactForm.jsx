@@ -1,4 +1,4 @@
-import { ErrorMessage, Formik } from "formik";
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import {
@@ -10,51 +10,49 @@ import {
 } from './ContactForm.styled';
 
 const schema = Yup.object().shape({
-    name: Yup.string().required(),
-    number: Yup.number().required(),
-})
+  name: Yup.string().required(),
+  number: Yup.number().required(),
+});
 
 const initialValues = {
-    name: '',
-    number: '',
-}
+  name: '',
+  number: '',
+};
 
 export const ContactForm = ({ onSubmit }) => {
-    const handleSubmit = (values, { resetForm }) => {
-        onSubmit(values);
-        resetForm();
-    };
+  const handleSubmit = (values, { resetForm }) => {
+    onSubmit(values);
+    resetForm();
+  };
 
-    return (
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={schema}
-      >
-        <InfoForm autoComplete="off">
-          <Label htmlFor="name">
-            Name
-            <InfoInput type="text" name="name" />
-            <ErrorInfo name="name" component="div" />
-          </Label>
+  return (
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={schema}
+    >
+      <InfoForm autoComplete="off">
+        <Label htmlFor="name">
+          Name
+          <InfoInput type="text" name="name" />
+          <ErrorInfo name="name" component="div" />
+        </Label>
 
-          <Label htmlFor="number">
-            Number
-            <InfoInput type="tel" name="number" />
-            <ErrorInfo name="number" component="div" />
-          </Label>
+        <Label htmlFor="number">
+          Number
+          <InfoInput type="tel" name="number" />
+          <ErrorInfo name="number" component="div" />
+        </Label>
 
-          <AddButton type="submit">Add contact</AddButton>
-        </InfoForm>
-      </Formik>
-    );
-}
+        <AddButton type="submit">Add contact</AddButton>
+      </InfoForm>
+    </Formik>
+  );
+};
 
 ContactForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-}
-
-
+  onSubmit: PropTypes.func.isRequired,
+};
 
 // import { Component } from "react";
 // import shortid from "shortid";

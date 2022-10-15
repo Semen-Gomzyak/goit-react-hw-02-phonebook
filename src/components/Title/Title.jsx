@@ -1,11 +1,11 @@
 import { Title, PrimaryTitle } from './Title.styled';
 import PropTypes from 'prop-types';
 
-export const TitleBig = ({children}) => {
+export const TitleBig = ({ children }) => {
   return <Title>{children}</Title>;
 };
 
-export const PrimaryTitles = ({children}) => {
+export const PrimaryTitles = ({ children }) => {
   return <PrimaryTitle>{children}</PrimaryTitle>;
 };
 
