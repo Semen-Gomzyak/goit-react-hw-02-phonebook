@@ -7,6 +7,7 @@ import {
   InfoInput,
   InfoForm,
   ErrorInfo,
+  Wrapper
 } from './ContactForm.styled';
 
 const schema = Yup.object().shape({
@@ -32,18 +33,21 @@ export const ContactForm = ({ onSubmit }) => {
       validationSchema={schema}
     >
       <InfoForm autoComplete="off">
-        <Label htmlFor="name">
-          Name
-          <InfoInput type="text" name="name" />
-          <ErrorInfo name="name" component="div" />
-        </Label>
+        <Wrapper>
+          <Label htmlFor="name">
+            Name
+            <InfoInput type="text" name="name" />
+            <ErrorInfo name="name" component="div" Top="36px" />
+          </Label>
+        </Wrapper>
 
-        <Label htmlFor="number">
-          Number
-          <InfoInput type="tel" name="number" />
-          <ErrorInfo name="number" component="div" />
-        </Label>
-
+        <Wrapper>
+          <Label htmlFor="number">
+            Number
+            <InfoInput type="tel" name="number" />
+            <ErrorInfo name="number" component="div" />
+          </Label>
+        </Wrapper>
         <AddButton type="submit">Add contact</AddButton>
       </InfoForm>
     </Formik>
