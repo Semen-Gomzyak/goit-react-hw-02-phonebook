@@ -48,18 +48,23 @@ export const InfoInput = styled(Field)`
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
-export const InfoForm = styled.div`
-  display: grid;
+export const Wrapper = styled.div`
+  max-width: 500px;
+  position: relative;
 `;
 
-export const Wrapper = styled(Form)`
-  position: relative;
+export const InfoForm = styled(Form)`
+  display: grid;
+  max-width: 400px;
+  margin: 0 auto;
 `;
 
 export const ErrorInfo = styled(ErrorMessage)`
   position: absolute;
   top: -9px;
+  right: 0px;
   margin-left: 10px;
   font-size: 15px;
   color: red;
+  white-space: nowrap;
 `;

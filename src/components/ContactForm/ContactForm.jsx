@@ -37,7 +37,7 @@ export const ContactForm = ({ onSubmit }) => {
           <Label htmlFor="name">
             Name
             <InfoInput type="text" name="name" />
-            <ErrorInfo name="name" component="div" Top="36px" />
+            <ErrorInfo name="name" component="div" />
           </Label>
         </Wrapper>
 
